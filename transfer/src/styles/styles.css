@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+input,
+select,
+button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  color: black;
+  outline: none;
+}
+
+button:hover,
+select:hover {
+  cursor: pointer;
+}
+
+.content {
+  padding: 1em;
+  width: 75vh;
+  margin: auto;
+  font-family: "Noto Sans HK", sans-serif;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+
+  background-color: #fff;
+  color: #303030;
+  border-radius: 3px;
+  padding: 1em;
+  margin: 10px 0;
+
+  box-shadow: 0 10px 15px 0px rgba(48, 48, 48, 0.25);
+  -moz-box-shadow: 0 10px 15px 0px rgba(48, 48, 48, 0.25);
+  -webkit-box-shadow: 0 10px 15px 0px rgba(48, 48, 48, 0.25);
+  -o-box-shadow: 0 10px 15px 0px rgba(48, 48, 48, 0.25);
+  -ms-box-shadow: 0 10px 15px 0px rgba(48, 48, 48, 0.25);
+}
+
+.toggle-label-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  float: none;
+  width: 100%;
+  height: 3rem;
+}
+
+.toggle-label {
+  font-family: inherit;
+  border: none;
+  color: #fff;
+  background: none;
+  border-radius: 25px;
+  padding: 5px 15px;
+  box-sizing: border-box;
+}
+
+.toggle-label:hover {
+  border: 1.3px #fff solid;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.toggle-label:active,
+.toggle-label:focus,
+.toggle-label:focus:active {
+  background-image: none;
+  outline: 0;
+  box-shadow: none;
+}
+
+.wide-input-wrapper:focus-within {
+  border-bottom: 2px solid #5f85ba;
+}
+
+.wide-input-wrapper input {
+  background-color: inherit;
+  outline: none;
+  border: none;
+  margin: 0.3rem 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.2rem;
+}
+
+.display-input-wrapper {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.24);
+  text-align: center;
+}
+
+.display-input-wrapper input {
+  margin: 0.3rem 0;
+  width: 100%;
+  line-height: 1.2rem;
+  text-transform: uppercase;
+}
+
+.expense-form input,
+.expense-form select {
+  outline: none;
+  border: none;
+  font-family: inherit;
+  width: 100%;
+}
+
+.expense-form-wrapper {
+  border-bottom: 2px solid #5f85ba;
+  margin: 2px 10px;
+  flex-basis: 40%;
+}
+
+.expense-form-line {
+  display: flex;
+  justify-content: space-around;
+  height: 2rem;
+  margin-bottom: 15px;
+}
+
+.expense-form .expense-form-line:first-child div:first-child {
+  flex: 2;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.expense-form select {
+  flex: 2;
+  width: 100%;
+}
+
+.btn-add {
+  background: #5f85ba;
+  color: #fff;
+  display: block;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  text-emphasis: bold;
+  border: none;
+  float: right;
+}
+
+.card {
+  background: white;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  color: black;
+}
+
+.form-input {
+  font-size: 0.9rem;
+  font-family: inherit;
+  padding: 0.5em 0.8em;
+  line-height: 2rem;
+  border-radius: 3px;
+  border: 1px solid rgb(174, 220, 231);
+  box-sizing: border-box;
+}
