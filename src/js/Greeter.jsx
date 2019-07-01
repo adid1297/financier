@@ -1,7 +1,7 @@
 import React from "react";
 
-import logo from "../../assets/sample-logo.png";
-import "../../styles/greeter-styles.css";
+import logo from "../assets/sample-logo.png";
+import "../styles/greeter-styles.css";
 
 const GreeterItem = ({ children }) => (
   <div className="greeter-item">{children}</div>

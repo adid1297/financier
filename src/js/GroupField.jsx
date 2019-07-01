@@ -1,7 +1,7 @@
 import React from "react";
 
-import MemberWidget from "../components/MemberWidget";
-import "../../styles/group-field.css";
+import MemberWidget from "./MemberWidget";
+import "../styles/group-field.css";
 
 export const GroupField = () => (
   <div className="group-field-container">

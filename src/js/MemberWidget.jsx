@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../styles/member-widget.css";
+import "../styles/member-widget.css";
 
 const MemberWidget = () => (
   <div className="member-widget-container">
