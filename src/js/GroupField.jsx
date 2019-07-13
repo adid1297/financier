@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { connect } from 'react-redux';
 
+import GroupActions from "../store/actions/GroupActions";
 import MemberWidget from "./MemberWidget";
 import "../styles/group-field.css";
 
@@ -25,14 +27,17 @@ const GroupEntry = ({ name, balance, members }) => {
           <MemberWidget />
         </div>
       </div>
-      <div className="group-entry-actions">
+      {/* <div className="group-entry-actions">
         <i className="fas fa-bars" />
-      </div>
+      </div> */}
     </div>
   );
 };
 
-const GroupFieldExpanded = () => {
+const GroupFieldExpanded = ({ createNewGroup, currentIndex }) => {
+  const [isExpanded, toggleExpand] = useState(false);
+  const toggleFieldExpand = () => toggleExpand(!isExpanded);
+
   const groupData = [
     {
       name: "Team Ba",
@@ -60,15 +65,29 @@ const GroupFieldExpanded = () => {
   const groups = groupInput =>
     groupInput.map(group => <GroupEntry {...group} />);
 
-  return (
-    <div className="group-field-container expanded">
+  return isExpanded ? (
+    <div className="group-field-container expanded" onBlur={() => createNewGroup('derp', currentIndex)}>
       <div className="group-field-expanded-header-wrapper">
-        <h3 className="group-field-expanded-header">Groups</h3>
-        <hr className="group-field-expanded-header-divider" />
+        <input type="text" className="group-field-input" placeholder="New Group Name" autoFocus />
+          <hr className="group-field-expanded-header-divider" />
       </div>
       <div className="group-entries-container">{groups(groupData)}</div>
+    </div>
+  ) : (
+    <div className="group-field-container" onClick={() => toggleFieldExpand()}>
+      <h3 className="group-field-expanded-header">Create New Group</h3>
     </div>
   );
 };
 
-export default GroupFieldExpanded;
+const mapStateToProps = state => ({
+  currentIndex: state.indexCounter.groups,
+})
+
+const mapDispatchToProps = dispatch => ({
+  createNewGroup: (name, index) => dispatch(GroupActions.addGroup(name, index)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+  GroupFieldExpanded
+);

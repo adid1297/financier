@@ -1,18 +1,49 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 import './styles/base.css';
 import './styles/gradient-bg.css';
 
+import GroupField from './components/GroupField';
+
 import Greeter from './js/Greeter';
-import GroupField from './js/GroupField';
+import store from './store';
 
 const App = () =>
-  <div className="content">
-    <Greeter />
-    <GroupField />
-  </div>;
+  <Provider store={store}>
+    <Router>
+      <div className="content">
+        <Route
+          exact
+          path="/"
+          component={() => (
+            <div>
+              {/* <Greeter /> */}
+              <GroupField />
+            </div>
+          )}
+        />
+        <Route
+          path="/about"
+          component={() =>
+            <div>
+              <Greeter />
+            </div>
+          }
+        />
+        <Route
+          path="/topics"
+          component={() =>
+            <div>
+              <GroupField />
+            </div>}
+        />
+      </div>
+    </Router>
+  </Provider>;
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(<App />, rootElement);
