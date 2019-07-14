@@ -10,6 +10,7 @@ import './styles/gradient-bg.css';
 import GroupField from './components/GroupField';
 import MemberForm from './components/MemberForm';
 import MemberList from './components/MemberList';
+import Navigation from './components/Navigation';
 
 import store from './store';
 
@@ -27,8 +28,32 @@ const App = () =>
           render={props =>
             <>
               <GroupField {...props} />
+              <Navigation {...props} />
+            </>
+          }
+        />
+        <Route
+          path="/group/:groupId/members"
+          render={props =>
+            <>
               <MemberForm {...props} />
               <MemberList {...props} />
+            </>
+          }
+        />
+        <Route
+          path="/group/:groupId/expenses"
+          render={props =>
+            <>
+              render expenses here
+            </>
+          }
+        />
+        <Route
+          path="/group/:groupId/split"
+          render={props =>
+            <>
+              render split here
             </>
           }
         />

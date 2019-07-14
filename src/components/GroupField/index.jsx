@@ -20,7 +20,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => ({
     dispatchProps.createGroupWithId(
       stateProps.currGroupIndex, name
     );
-    ownProps.history.push(`/group/${stateProps.currGroupIndex}`)
+    ownProps.history.push(`/group/${stateProps.currGroupIndex}/members`)
   },
   savedGroups: Object.values(stateProps.savedGroups || {}),
   selectedGroup: getSelectedGroup(ownProps.match.params.groupId, stateProps.savedGroups),

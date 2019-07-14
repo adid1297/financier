@@ -2,7 +2,7 @@ export const getGroupId = ownProps => parseInt(ownProps.match.params.groupId);
 
 export const getGroupMembers = (state, groupId) => {
   const { groups, members } = state;
-  if (!(groupId in groups) || !members) {
+  if (!groups || !(groupId in groups) || !members) {
     return {};
   };
 
