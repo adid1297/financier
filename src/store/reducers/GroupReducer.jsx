@@ -1,4 +1,5 @@
 import { GroupActionConstants } from '../actions/GroupActions';
+import { MemberActionConstants } from '../actions/MemberActions';
 
 const groups = (state = null, action) => {
   switch (action.type) {
@@ -11,6 +12,17 @@ const groups = (state = null, action) => {
           members: [],
           expenses: [],
           payments: [],
+        }
+      };
+    case MemberActionConstants.ADD_MEMBER:
+      return {
+        ...state,
+        [action.groupId]: {
+          ...state[action.groupId],
+          members: [
+            ...state[action.groupId].members,
+            action.memberId,
+          ]
         }
       };
     default:

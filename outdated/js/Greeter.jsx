@@ -19,7 +19,7 @@ const Greeter = () => (
         </GreeterItem>
       </div>
       <button className="greeter-shift">
-        <i class="fas fa-chevron-right" />
+        <i className="fas fa-chevron-right" />
       </button>
     </div>
   </div>

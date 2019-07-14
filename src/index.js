@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 import './styles/base.css';
 import './styles/gradient-bg.css';
 
 import GroupField from './components/GroupField';
+import MemberForm from './components/MemberForm';
+import MemberList from './components/MemberList';
 
-import Greeter from './js/Greeter';
 import store from './store';
 
 const App = () =>
@@ -19,27 +20,17 @@ const App = () =>
         <Route
           exact
           path="/"
-          component={() => (
-            <div>
-              {/* <Greeter /> */}
-              <GroupField />
-            </div>
-          )}
+          component={GroupField}
         />
         <Route
-          path="/about"
-          component={() =>
-            <div>
-              <Greeter />
-            </div>
+          path="/group/:groupId"
+          render={props =>
+            <>
+              <GroupField {...props} />
+              <MemberForm {...props} />
+              <MemberList {...props} />
+            </>
           }
-        />
-        <Route
-          path="/topics"
-          component={() =>
-            <div>
-              <GroupField />
-            </div>}
         />
       </div>
     </Router>

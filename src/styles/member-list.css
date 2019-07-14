@@ -1,0 +1,31 @@
+.member-list {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 30vh;
+  padding: 1.25em 0.5em;
+}
+
+.member-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.05em;
+}
+
+.member-container:last-child {
+  margin-bottom: 0;
+}
+
+.member-overview {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.member-photo {
+  margin: 0 0.5em;
+  font-size: 3rem;
+}

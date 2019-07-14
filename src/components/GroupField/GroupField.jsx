@@ -15,7 +15,6 @@ export const NewGroupNameInput = ({ createGroup }) => {
     };
   }
 
-
   return (
     <div className="group-field-expanded-header-wrapper">
       <div className="wide-input-wrapper">
@@ -75,6 +74,7 @@ const IdleDisplayText = ({ selectedGroup }) => (
 
 const GroupField = ({ savedGroups, createGroup, selectedGroup }) => {
   const [isExpanded, toggleExpand] = useState(false);
+  console.log(selectedGroup);
 
   return (
     <div

@@ -39,56 +39,6 @@ input[type="number"]::-webkit-outer-spin-button {
   font-family: "Noto Sans HK", sans-serif;
 }
 
-.container {
-  box-sizing: border-box;
-  width: 100%;
-
-  background-color: #fff;
-  color: #303030;
-  border-radius: 3px;
-  padding: 1em;
-  margin: 10px 0;
-
-  box-shadow: 0 10px 15px 0px rgba(48, 48, 48, 0.25);
-  -moz-box-shadow: 0 10px 15px 0px rgba(48, 48, 48, 0.25);
-  -webkit-box-shadow: 0 10px 15px 0px rgba(48, 48, 48, 0.25);
-  -o-box-shadow: 0 10px 15px 0px rgba(48, 48, 48, 0.25);
-  -ms-box-shadow: 0 10px 15px 0px rgba(48, 48, 48, 0.25);
-}
-
-.toggle-label-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  float: none;
-  width: 100%;
-  height: 3rem;
-}
-
-.toggle-label {
-  font-family: inherit;
-  border: none;
-  color: #fff;
-  background: none;
-  border-radius: 25px;
-  padding: 5px 15px;
-  box-sizing: border-box;
-}
-
-.toggle-label:hover {
-  border: 1.3px #fff solid;
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-.toggle-label:active,
-.toggle-label:focus,
-.toggle-label:focus:active {
-  background-image: none;
-  outline: 0;
-  box-shadow: none;
-}
-
 .card {
   background: white;
   border-radius: 6px;
@@ -105,4 +55,8 @@ input[type="number"]::-webkit-outer-spin-button {
   border-radius: 3px;
   border: 1px solid rgb(174, 220, 231);
   box-sizing: border-box;
+}
+
+.form-input.fill {
+  width: 100%;
 }
