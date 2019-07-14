@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { getGroupId, getGroupMembers } from '../../store/selectors'
+import { getGroupId, getGroupMembers } from '../../store/selectors';
 import MemberActions from "../../store/actions/MemberActions";
 import MemberForm from "./MemberForm";
 

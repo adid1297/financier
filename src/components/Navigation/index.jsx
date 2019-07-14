@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { getGroupId } from '../../store/selectors'
+import { getGroupId } from '../../store/selectors';
 import Navigation from './Navigation';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -8,4 +8,3 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 export default connect(mapStateToProps)(Navigation);
-

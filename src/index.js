@@ -11,6 +11,8 @@ import GroupField from './components/GroupField';
 import MemberForm from './components/MemberForm';
 import MemberList from './components/MemberList';
 import Navigation from './components/Navigation';
+import ExpenseForm from './components/ExpenseForm';
+import ExpenseList from './components/ExpenseList';
 
 import store from './store';
 
@@ -45,7 +47,8 @@ const App = () =>
           path="/group/:groupId/expenses"
           render={props =>
             <>
-              render expenses here
+              <ExpenseForm {...props} />
+              <ExpenseList {...props} />
             </>
           }
         />

@@ -4,21 +4,7 @@ import { combineReducers } from 'redux';
 import reducers from './reducers';
 
 
-const expenses = (state = null, action) => {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
-
 const payments = (state = null, action) => {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
-
-const activeGroup = (state = null, action) => {
   switch (action.type) {
     default:
       return state
@@ -28,11 +14,9 @@ const activeGroup = (state = null, action) => {
 export const reducer = combineReducers({
   groups: reducers.GroupReducer,
   indexCounter: reducers.IndexCounterReducer,
-  selectedGroup: reducers.SelectedGroupReducer,
   members: reducers.MemberReducer,
-  expenses,
-  payments,
-  activeGroup
+  expenses: reducers.ExpenseReducer,
+  payments
 });
 
 export default createStore(

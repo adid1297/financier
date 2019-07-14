@@ -1,5 +1,6 @@
 import { GroupActionConstants } from '../actions/GroupActions';
 import { MemberActionConstants } from '../actions/MemberActions';
+import { ExpenseActionConstants } from '../actions/ExpenseActions';
 
 const initialState = {
   groups: 1,
@@ -20,6 +21,11 @@ const indexCounter = (state = initialState, action) => {
         ...state,
         members: state.members + 1,
       };
+    case ExpenseActionConstants.ADD_EXPENSE:
+      return {
+        ...state,
+        expenses: state.expenses + 1,
+      }
     default:
       return state;
   }
