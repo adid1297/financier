@@ -12,8 +12,12 @@ const ExpenseFormInput = ({ fieldName, ...props }) => (
 
 const MemberSelect = ({ fieldName, members, ...props }) => (
   <select className={`form-input expense-form-name-${fieldName}`} {...props}>
-    {members.map(member =>
-      <option key={`${fieldName} ${member.id}`} value={member.memberId}>
+    {members.map((member, index) =>
+      <option
+        selected={index === 0}
+        key={`${fieldName} ${member.id}`}
+        value={member.memberId}
+      >
         {member.name}
       </option>
     )}

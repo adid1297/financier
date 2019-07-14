@@ -2,7 +2,17 @@ import { GroupActionConstants } from '../actions/GroupActions';
 import { MemberActionConstants } from '../actions/MemberActions';
 import { ExpenseActionConstants } from '../actions/ExpenseActions';
 
-const groups = (state = null, action) => {
+const defaulter = {
+  1 : {
+    id: 1,
+    name: 'AGroupName',
+    members: [1, 2, 3],
+    expenses: [1, 2, 3],
+    payments: [],
+  }
+}
+
+const groups = (state = defaulter, action) => {
   switch (action.type) {
     case GroupActionConstants.ADD_GROUP:
       return {

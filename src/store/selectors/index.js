@@ -45,3 +45,50 @@ export const getGroupExpenses = (state, groupId) => {
     {}
   )
 }
+
+
+const getBalance = expenses => expenses.reduce(
+  (balance, { amount, paidBy, paidFor }) => ({
+    ...balance,
+    [paidBy.memberId]: (balance[paidBy.memberId] || 0) + amount,
+    [paidFor.memberId]: (balance[paidFor.memberId] || 0) - amount,
+  }), {}
+);
+
+const suggestPayments = balance => {
+  const runningBalance = Object.assign({}, balance);
+  const toPay = Object.keys(balance).filter(balanceKey => balance[balanceKey] > 0);
+  const inDebt = Object.keys(balance).filter(balanceKey => balance[balanceKey] < 0);
+
+  const payments = [];
+  toPay.forEach(personToPay => {
+    let balanceToPay = runningBalance[personToPay];
+    while (balanceToPay > 0) {
+      const candidate = inDebt.filter(personInDebt => runningBalance[personInDebt] < 0)[0];
+      const owedAmount = Math.abs(runningBalance[candidate])
+      const payAmount = (balanceToPay >= owedAmount) ? owedAmount : balanceToPay;
+
+      balanceToPay -= payAmount;
+      runningBalance[candidate] += payAmount;
+
+      payments.push({
+        amount: payAmount,
+        from: candidate,
+        to: personToPay,
+      });
+    };
+  });
+
+  return payments;
+};
+
+export const getSuggestedPaymentsFromState = (state, groupId) => {
+  const expenses = getGroupExpenses(state, groupId);
+
+  if (!expenses) {
+    return {};
+  }
+
+  const expenseArray = Object.values(expenses);
+  return suggestPayments(getBalance(expenseArray));
+}

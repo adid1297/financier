@@ -74,7 +74,6 @@ const IdleDisplayText = ({ selectedGroup }) => (
 
 const GroupField = ({ savedGroups, createGroup, selectedGroup }) => {
   const [isExpanded, toggleExpand] = useState(false);
-  console.log(selectedGroup);
 
   return (
     <div

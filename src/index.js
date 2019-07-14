@@ -13,6 +13,7 @@ import MemberList from './components/MemberList';
 import Navigation from './components/Navigation';
 import ExpenseForm from './components/ExpenseForm';
 import ExpenseList from './components/ExpenseList';
+import SuggestedPaymentsList from './components/SuggestedPaymentsList';
 
 import store from './store';
 
@@ -56,7 +57,7 @@ const App = () =>
           path="/group/:groupId/split"
           render={props =>
             <>
-              render split here
+              <SuggestedPaymentsList {...props} />
             </>
           }
         />
