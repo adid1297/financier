@@ -24,6 +24,8 @@
 }
 
 .nav-button:hover {
+  color: var(--white-smoke);
+  background-color: var(--lighter-blue);
   border-color: var(--lighter-blue);
   cursor: pointer;
 }

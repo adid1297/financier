@@ -26,6 +26,11 @@
   --noto-sans: 'Noto Sans HK', sans-serif;
 }
 
+::selection {
+  color: var(--main-green);
+  background: var(--lighter-blue);
+}
+
 h1,
 h2,
 h3,
