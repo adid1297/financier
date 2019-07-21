@@ -10,21 +10,26 @@
 
 .nav-button {
   font-family: inherit;
-  border: none;
-  color: #fff;
-  background: none;
-  border-radius: 25px;
-  padding: 5px 15px;
-  box-sizing: border-box;
   text-decoration: none;
+  color: var(--main-blue);
+  background: none;
+  box-sizing: border-box;
+
+  padding: 5px 15px;
+  border-radius: 25px;
+  border: 1.3px transparent solid;
+
+  width: 120px;
+  text-align: center;
 }
 
 .nav-button:hover {
-  border: 1.3px #fff solid;
+  border-color: var(--lighter-blue);
   cursor: pointer;
-  box-sizing: border-box;
 }
 
 .nav-active {
-  border: 1.3px #fff solid;
+  /* border-color: var(--white-smoke); */
+  background-color: var(--main-blue);
+  color: var(--white-smoke);
 }

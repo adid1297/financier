@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap");
-@import url('https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700&display=swap');
 
 :root {
   --main-blue: rgb(5, 56, 107);
@@ -85,16 +85,66 @@ a {
   -ms-box-shadow: 0 10px 15px 0px var(--shadow);
 }
 
+.card-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.65em;
+  margin-bottom: 1em;
+}
+
+.title-text {
+  padding-right: 10px;
+  color: var(--white-green);
+}
+
+.title-line {
+  width: 100%;
+  margin: 0;
+  height: 0.5px;
+  background-color: var(--light-green);
+  border: 0.5px solid var(--light-green);
+  opacity: 0.4;
+}
+
 .form-input {
-  /* text: var(--noto-sans); */
-  color: inherit;
-  font-size: 0.9rem;
+  background-color: inherit;
+  color: var(--main-green);
   font-family: var(--noto-sans);
+  font-size: 0.9rem;
+
+  border: 1.5px solid var(--white-green);
+  border-radius: 3px;
+
   padding: 0.5em 0.8em;
   line-height: 2rem;
-  border-radius: 3px;
-  border: 1px solid rgb(174, 220, 231);
   box-sizing: border-box;
+}
+
+.form-input:active, .form-input:hover {
+  border-color: var(--main-green);
+  background-color: var(--main-green);
+  color: var(--shade);
+}
+
+.form-input:focus {
+  background-color: var(--light-green);
+  border-color: var(--main-green);
+  color: var(--shade);
+}
+
+.form-input::placeholder {
+  color: var(--white-smoke);
+  opacity: 0.9;
+}
+
+.form-input:active::placeholder,
+.form-input:hover::placeholder,
+.form-input:focus::placeholder {
+  color: var(--shade);
+  opacity: 0.6;
+  font-style: oblique;
 }
 
 .form-input.fill {

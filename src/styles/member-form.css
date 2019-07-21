@@ -3,7 +3,6 @@
   margin: 0.3em;
   justify-content: space-between;
   align-content: center;
-  align-items: flex-start;
 }
 
 .member-name-input-wrapper {
@@ -12,14 +11,18 @@
 }
 
 .member-form-submit {
-  line-height: 2rem;
-  font-size: 1em;
-  border-radius: 3px;
-  border: 1px solid rgb(174, 220, 231);
   box-sizing: border-box;
+  padding-top: 0.3em;
+  margin-right: 0.3em;
 }
 
-.member-form-submit-icon {
-  color: rgb(101, 203, 216);
+.member-form-submit i {
   font-size: 3em;
+  color: var(--iron);
+  opacity: 0.5;
+}
+
+.member-form-submit.can-submit i {
+  color: var(--main-green);
+  opacity: 1;
 }
