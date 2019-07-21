@@ -1,20 +1,27 @@
 import React from "react";
 
-import "../../styles/member-list.css";
+import { CardTitle } from "../.common";
+import "../../styles/expense-list.css";
 
 const ExpenseEntry = ({ expense }) => (
-  <div className="member-container">
-    <i className="member-photo fas fa-user-astronaut" />
-    <h3 className="member-overview">{expense.description}</h3>
-    <h3 className="member-overview">{expense.amount}</h3>
-    <h3 className="member-overview">{expense.paidFor.name}</h3>
-    <h3 className="member-overview">{expense.paidBy.name}</h3>
+  <div className="expense-container">
+    <div className="expense-header">
+      <span className="expense-description">{expense.description}</span>
+      {`, `}
+      <span className="expense-amount">{expense.amount}</span>
+    </div>
+    <div className="expense-details">
+      Paid by <span className="expense-name-detail">{expense.paidBy.name}</span>
+      {` `}
+      for <span className="expense-name-detail">{expense.paidFor.name}.</span>
+    </div>
   </div>
 );
 
 
 const ExpenseList = ({ expenses }) => (
-  <div className="member-list card">
+  <div className="expense-list card">
+    <CardTitle title="Expenses" />
     {expenses.map(expense => <ExpenseEntry expense={expense} />)}
   </div>
 );

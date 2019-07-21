@@ -1,0 +1,41 @@
+.expense-list {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 30vh;
+  padding: 1.25em 0.5em;
+}
+
+.expense-container {
+  margin: 0 0.65em;
+  box-sizing: border-box;
+  margin-bottom: 1.3em;
+}
+
+.expense-container:last-child {
+  margin-bottom: 0;
+}
+
+.expense-header {
+  font-family: var(--montserrat);
+  font-size: 1.25em;
+  color: var(--main-green);
+  /* text-decoration: underline; */
+  padding-bottom: 0.1em;
+}
+
+.expense-description {
+  font-weight: 700;
+}
+
+.expense-details {
+  font-style: oblique;
+  font-family: var(--noto-sans);
+  padding-left: 0.3em;
+}
+
+.expense-name-detail {
+  padding: 0 0.2em;
+  text-decoration: underline;
+  font-style: normal;
+  font-family: var(--montserrat);
+}
