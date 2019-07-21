@@ -3,7 +3,7 @@ import { MemberActionConstants } from '../actions/MemberActions';
 import { ExpenseActionConstants } from '../actions/ExpenseActions';
 
 const initialState = {
-  groups: 2,
+  groups: 3,
   members: 4,
   expenses: 4,
   payments: 1,

@@ -1,8 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 // import MemberWidget from "./MemberWidget";
 import "../../styles/group-field.css";
 
-export const NewGroupNameInput = ({ createGroup }) => {
+export const NewGroupNameInput = ({ createGroup, collapseParent }) => {
   const inputNode = useRef(null);
 
   const [newGroupName, setGroupName] = useState('');
@@ -12,15 +13,16 @@ export const NewGroupNameInput = ({ createGroup }) => {
       createGroup(newGroupName);
       setGroupName('');
       inputNode.current.blur();
+      collapseParent();
     };
   }
 
   return (
-    <div className="group-field-expanded-header-wrapper">
-      <div className="wide-input-wrapper">
+    <div className="group-field-expanded-header">
+      <div className="group-field-input-wrapper">
         <input
           type="text"
-          className="group-field-input"
+          className="form-input fill"
           value={newGroupName}
           onChange={onChange}
           onKeyPress={onKeyPress}
@@ -36,55 +38,71 @@ export const NewGroupNameInput = ({ createGroup }) => {
   );
 };
 
-const GroupEntry = ({ name, balance, members }) => {
+const GroupEntry = ({ name, id, collapseParent }) => {
   return (
-    <div className="group-entry-container">
-      <div className="group-photo-container">
-        <i className="fas fa-user-astronaut" />
-      </div>
-      <div className="group-details">
-        <div className="group-details-header">
-          <h3 className="group-name">{name}</h3>
-        </div>
-        {/* <div className="group-members">
-          <MemberWidget />
-        </div> */}
-      </div>
-      {/* <div className="group-entry-actions">
-        <i className="fas fa-bars" />
-      </div> */}
-    </div>
+    <NavLink
+      to={`/group/${id}/members`}
+      className="group-entry-container"
+      activeClassName="group-entry-container-active"
+      onClick={collapseParent}
+    >
+      <h3 className="group-name">{name}</h3>
+    </NavLink>
   );
 };
 
-const SavedGroups = ({ savedGroups }) => (
+const SavedGroups = ({ savedGroups, goToGroup, collapseParent }) => (
   <div className="group-entries-container">
     {savedGroups.length ?
       savedGroups.map(
-        group => <GroupEntry name={group.name} key={`group-${group.id}`}/>
+        group => <GroupEntry
+          id={group.id}
+          name={group.name}
+          key={`group-${group.id}`}
+          goToGroup={goToGroup}
+          collapseParent={collapseParent}
+        />
       ) : <em>No Groups Found</em>}
   </div>
 );
 
 const IdleDisplayText = ({ selectedGroup }) => (
-  <h3 className="group-field-expanded-header">
+  <h3 className="group-field-header">
     {selectedGroup ? selectedGroup.name : 'Create New Group'}
   </h3>
 );
 
-const GroupField = ({ savedGroups, createGroup, selectedGroup }) => {
+const GroupField = ({ savedGroups, createGroup, selectedGroup, goToGroup }) => {
   const [isExpanded, toggleExpand] = useState(false);
+  const groupFieldNode = useRef();
+
+  const handleClick = e => {
+    if (groupFieldNode.current.contains(e.target)) {
+      toggleExpand(true);
+      return;
+    }
+
+    toggleExpand(false);
+  };
+
+  const collapseField = () => toggleExpand(false);
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, []);
 
   return (
     <div
-      className={`group-field-container ${isExpanded && 'expanded'}`}
-      onClick={() => toggleExpand(true)}
-      onBlur={() => toggleExpand(false)}
+      className={`group-field-container ${isExpanded ? 'expanded' : ''} card`}
+      ref={groupFieldNode}
     >
       {isExpanded ?
         <>
-          <NewGroupNameInput createGroup={createGroup} />
-          <SavedGroups savedGroups={savedGroups} />
+          <NewGroupNameInput createGroup={createGroup} collapseParent={collapseField} />
+          <SavedGroups savedGroups={savedGroups} goToGroup={goToGroup} collapseParent={collapseField} />
         </> :
         <IdleDisplayText selectedGroup={selectedGroup} />}
     </div>

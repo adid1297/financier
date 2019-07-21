@@ -1,9 +1,15 @@
 import React from "react";
 
-const SuggestedPaymentsList = ({ suggestedPayments }) => {
-  console.log('SDAFIAS', suggestedPayments);
+const SuggestionItem = ({ amount, from, to }) => (
+  <div className="suggestion">
+    <strong>{from}</strong> pays <strong> {amount} </strong> to <strong>{to}</strong>
+  </div>
+)
 
-  return <div>this is the suggested payments list</div>;
-}
+const SuggestedPaymentsList = ({ suggestedPayments }) => (
+  <div className="suggested-payments-list">
+    {suggestedPayments.map(suggestion => <SuggestionItem {...suggestion} />)}
+  </div>
+)
 
 export default SuggestedPaymentsList;

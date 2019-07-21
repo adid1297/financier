@@ -5,9 +5,16 @@ import { ExpenseActionConstants } from '../actions/ExpenseActions';
 const defaulter = {
   1 : {
     id: 1,
-    name: 'AGroupName',
+    name: 'Alivia',
     members: [1, 2, 3],
     expenses: [1, 2, 3],
+    payments: [],
+  },
+  2 : {
+    id: 2,
+    name: 'Invcessant',
+    members: [],
+    expenses: [],
     payments: [],
   }
 }

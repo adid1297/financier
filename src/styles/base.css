@@ -1,4 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap');
+
+:root {
+  --main-blue: rgb(5, 56, 107);
+  --lighter-blue: rgb(8, 51, 180);
+  --shadow-green: rgb(55, 150, 131);
+  --main-green: rgb(91, 219, 149);
+  --light-green: rgb(142, 228, 175);
+  --white-green: rgb(237, 245, 225);
+
+  --white-smoke: #F9F9F8;
+
+  --dark: rgb(11, 12, 16);
+  --shade: rgb(31, 40, 51);
+  --iron: rgb(197, 198, 199);
+  --splash: rgb(100, 251, 241);
+  --pool: rgb(69, 162, 158);
+
+  --feather: rgb(119, 201, 212);
+  --marine: rgb(87, 188, 144);
+  --forest: rgb(1, 82, 73);
+  --sleek-grey: rgb(165, 165, 175);
+
+  --montserrat: 'Montserrat', sans-serif;
+  --noto-sans: 'Noto Sans HK', sans-serif;
+}
 
 h1,
 h2,
@@ -32,24 +58,38 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .content {
   padding: 1em;
   width: 75vh;
   margin: auto;
-  font-family: "Noto Sans HK", sans-serif;
+  font-family: var(--montserrat);
 }
 
 .card {
-  background: white;
+  background: var(--main-blue);
+  color: var(--white-smoke);
   border-radius: 6px;
   margin-bottom: 0.5em;
   padding: 0.5em;
-  color: black;
+
+  --shadow: rgba(8, 51, 180, .2);
+  box-shadow: 0 10px 15px 0px var(--shadow);
+  -moz-box-shadow: 0 10px 15px 0px var(--shadow);
+  -webkit-box-shadow: 0 10px 15px 0px var(--shadow);
+  -o-box-shadow: 0 10px 15px 0px var(--shadow);
+  -ms-box-shadow: 0 10px 15px 0px var(--shadow);
 }
 
 .form-input {
+  /* text: var(--noto-sans); */
+  color: inherit;
   font-size: 0.9rem;
-  font-family: inherit;
+  font-family: var(--noto-sans);
   padding: 0.5em 0.8em;
   line-height: 2rem;
   border-radius: 3px;
