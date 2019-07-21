@@ -90,5 +90,10 @@ export const getSuggestedPaymentsFromState = (state, groupId) => {
   }
 
   const expenseArray = Object.values(expenses);
-  return suggestPayments(getBalance(expenseArray));
+  const suggestions = suggestPayments(getBalance(expenseArray));
+  return suggestions.map(item => ({
+    ...item,
+    from: state.members[item.from].name,
+    to: state.members[item.to].name,
+  }));
 }
