@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello, and welcome to my first passion project!
 
-## Available Scripts
+## A Quick Background
+- I really wanted a personal financing app
+- I couldn't settle on anything that's currently available on the market
+- that's also free
+- If I can't find it, then I'll make it
+- Use this as an opportunity to experience building something from the ground up
 
-In the project directory, you can run:
+- I also was using a couple of group expense splitting app
+- I always got delegated to compute the breakdown for everybody lol
+- The one I'm using had a couple of pain points that rendered them unusable in certain scenarios
+- The alternative had me question, it's uhm, design choices
+- thought that it could be linked to said finance tracking app
+- one mega financing app yay
 
-### `npm start`
+- Irdk how I wanted to track my finances
+- (I'm currently ironing out a google sheet for it)
+- I do sort of know what I wanted in a expense splitting app
+  - so I started here
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Introducing: Financier
+- A start of something new
+- The site of my personal financing mega app
+- I had enough experience in developing in python and (React) JS that I wanted to try my hands on setting up a whole app and see the underlying mechanisms of the thing
+- Also wanted to get down and dirty with CSS and HTML again, since I really want to transition into a more Front End oriented role
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## What can it do?
+- Right now, you can:
+ - create groups
+ - add members to the groups
+ - create an expense covered by one person for another in the same group
+ - suggest a way to settle up the owed money in the group
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Moving forward
+- So right now, it's very bare bones
+- Very hyperbasic
+- Next up is actually being able to update and delete entries
+- Besides that, here's an uncomprehensive list of what I want the app to do:
+ - allow creating, editing, and deleting a payment/settlement
+ - allow multiple people to pay for an item
+ - allow an item to be for multiple people
+ - allow specifying percentages/splits in how much a person pays/owes
+ - take in receipts:
+  - multiple people can pool an amount to cover the total of the receipt
+  - specify who pays for each item of the receipt
+  - note any additional fees for the items (e.g. service charge)
+- some tech stuff:
+ - create a way to persist sessions and group info
+  - right now, it's simply stored to the state
+ - make web app to be more mobile responsive
+ - create native apps
+- All this with the focus on making it super simple and sleek!
