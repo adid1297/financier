@@ -7,12 +7,12 @@ const defaulter = {
     groupId: 1,
   },
   2: {
-    name: 'Juni',
+    name: 'Cole',
     memberId: 2,
     groupId: 1,
   },
   3: {
-    name: 'Aaron',
+    name: 'Shane',
     memberId: 3,
     groupId: 1,
   },
