@@ -1,8 +1,8 @@
 /* from https://codepen.io/P1N2O/pen/pyBNzX */
 
 body {
-  width: 100wh;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
   color: #fff;
   background: linear-gradient(-45deg, var(--splash), var(--main-green));
   background-size: 400% 400%;

@@ -70,7 +70,7 @@ a {
 
 .content {
   padding: 1em;
-  width: 75vh;
+  width: 75vw;
   margin: auto;
   font-family: var(--montserrat);
 }

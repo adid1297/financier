@@ -15,11 +15,11 @@
   background: none;
   box-sizing: border-box;
 
-  padding: 5px 15px;
-  border-radius: 25px;
+  padding: 0.3rem 1rem;
+  border-radius: 1.5rem;
   border: 1.3px transparent solid;
 
-  width: 120px;
+  width: 7.5rem;
   text-align: center;
 }
 
