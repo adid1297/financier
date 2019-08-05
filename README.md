@@ -1,10 +1,10 @@
 Hello, and welcome to my first passion project!
 
 ### A Quick Background
-During my quest for the perfect financing app, I realized that the way
-I wanted to track my finances didn't align with what was currently
-available. They just didn't click the way I wanted them to. Then the
-thought of "If I can't find it, then I'll make it".
+I recently discovered that the way I wanted to track my finances
+hardly aligned with what was currently available in the market.
+The apps just didn't click with me as much as I would have hoped to.
+Then the thought of "If I can't find it, then I'll make it".
 
 I was also looking for a way to efficiently divide group expenditures
 when someone catches the bill for someone else. Similarly, the
